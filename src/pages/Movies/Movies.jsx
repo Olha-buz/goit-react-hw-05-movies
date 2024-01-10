@@ -18,7 +18,6 @@ const Movies = () => {
       setMovies([]);
       return;
     }
-    setLoading(true);
     fetchSearchMovie(query)
       .then(searchMovie => {
         setMovies(searchMovie);
@@ -37,6 +36,7 @@ const Movies = () => {
   const setParams = query => {
     const params = query !== '' ? { query } : {};
     setSearchParams(params);
+    console.log(params);
   };
 
   return (
@@ -45,7 +45,7 @@ const Movies = () => {
       {loading && <Loader />}
       {error && (<h2>Nothing find</h2>)}
       {(query && movies.length > 0) && (<h2>Found movie</h2>)}
-      {movies.length && <MovieList movies={movies}/>}
+      {!!movies.length && <MovieList movies={movies}/>}
     </div>
   )
 }
