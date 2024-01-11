@@ -13,8 +13,8 @@ const Home = () => {
 
   return (
     <div>
-      <title>Trending movies</title>
-      {!!movies.length && <MovieList movies={movies}/>}
+      <title>Trends of the day!</title>
+      {<MovieList movies={movies}/>}
     </div>
   )
 }

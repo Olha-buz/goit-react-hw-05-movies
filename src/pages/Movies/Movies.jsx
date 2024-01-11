@@ -33,10 +33,11 @@ const Movies = () => {
     
   }, [query]);
 
-  const setParams = query => {
-    const params = query !== '' ? { query } : {};
-    setSearchParams(params);
-    console.log(params);
+  const setParams = evt => {
+    evt.preventDefault();
+    setSearchParams({query: evt.target.elemtnts.search.value});
+    console.log(query);
+    evt.target.reset();
   };
 
   return (
@@ -45,7 +46,7 @@ const Movies = () => {
       {loading && <Loader />}
       {error && (<h2>Nothing find</h2>)}
       {(query && movies.length > 0) && (<h2>Found movie</h2>)}
-      {!!movies.length && <MovieList movies={movies}/>}
+      {<MovieList movies={movies}/>}
     </div>
   )
 }

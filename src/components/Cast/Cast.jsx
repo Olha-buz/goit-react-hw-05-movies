@@ -14,11 +14,11 @@ export const Cast = () => {
 
     return (
         <ul>
-            {cast.map(({ id, profile_path, actor, character }) => (
+            {cast>0 && cast.map(({ id, profile_path, original_name, character }) => (
                 <li key={id}>
-                    <img src={`{https://image.tmdb.org/t/p/w300${profile_path}`} alt={actor} width='120' />
+                    <img src={`{https://image.tmdb.org/t/p/w300${profile_path}`} alt={original_name} width='120' />
                     <div>
-                        <p>Actor: {actor}</p>
+                        <p>Actor: {original_name}</p>
                         <p>Character: {character}</p>
                     </div>
                 </li>

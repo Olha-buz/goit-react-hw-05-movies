@@ -1,6 +1,7 @@
 
-import React, {lazy} from 'react';
+import React, {Suspense, lazy} from 'react';
 import { Route, Routes } from "react-router-dom";
+import Loader from './Loader/Loader';
 
 const Layout = lazy(() => import('../components/Layout/Layout'));
 const Home = lazy(() => import('../pages/Home/Home'));
@@ -12,6 +13,7 @@ const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
+    <Suspense fallback={<Loader/>}>
     <Routes>
       <Route path='/' element={<Layout/>}>
         <Route index element={<Home>Home</Home>} />
@@ -22,7 +24,8 @@ export const App = () => {
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Route>  
-    </Routes>
+      </Routes>
+      </Suspense>
   );
 };
 
