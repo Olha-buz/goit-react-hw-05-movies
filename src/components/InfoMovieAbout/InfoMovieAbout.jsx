@@ -1,14 +1,15 @@
 import { PropTypes } from 'prop-types';
+import css from './InfoMovieAbout.module.css';
 
 export const InfoMovieAbout = ({movie}) => {
-    const genreList = movie.genres ? movie.genres.map(el => el.name).join(',') : 'Genre?';
+    const genreList = movie.genres ? movie.genres.map(el => el.name).join(', ') : 'Genre?';
     
     console.log(movie);
     
     return (
         <>
-            <div className="infoMovie">
-                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} width={240} />
+            <div className={css.infoMovie}>
+                <img className={ css.imgMovie} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} width={280} />
                 <div>
                     <h3>{movie.title} ({movie.release_date})</h3>
                     <h3>Userscore: {movie.vote_average}</h3>
@@ -18,7 +19,7 @@ export const InfoMovieAbout = ({movie}) => {
                     <p>{genreList}</p>
                 </div>
             </div>
-            <h3>Aditional information</h3>
+            <h3 className={css.aditional }>Aditional information</h3>
         </>
     )
 };

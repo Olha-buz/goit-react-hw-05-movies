@@ -1,0 +1,14 @@
+.infoMovie {
+    display: flex;
+    padding: 32px;
+    border-bottom: 1px solid #E2A675;
+}
+
+.imgMovie {
+    margin-right: 32px;
+}
+
+.aditional {
+    margin-left: 32px;
+    
+}

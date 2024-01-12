@@ -1,4 +1,6 @@
 import InfoMovieAbout from "components/InfoMovieAbout/InfoMovieAbout";
+import css from './MovieDetails.module.css';
+
 const { fetchMovieId } = require("api/api");
 const { useState, useEffect, useRef } = require("react");
 const { useLocation, useParams, Link, Outlet } = require("react-router-dom");
@@ -30,16 +32,16 @@ const MovieDetails = () => {
 
     return (
         <div>
-            <Link className='backbtn' to={linkRef.current}>Go back</Link>
+            <Link className={css.backbtn} to={linkRef.current}>Go back</Link>
             {movie && <InfoMovieAbout movie={movie}/>}
-                <ul>
+                <ul className={css.aditionalList}>
                     <li>
-                        <Link to="cast">
+                    <Link className={ css.linkAditional} to="cast">
                             Cast
                         </Link>
                     </li>
                     <li>
-                        <Link to="reviews">
+                        <Link className={ css.linkAditional} to="reviews">
                             Reviews
                         </Link>
                     </li>

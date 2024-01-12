@@ -1,0 +1,23 @@
+.backbtn {
+    border-radius: 4px;
+    background: #E2A675;
+    padding: 8px 16px;
+    margin-left: 32px;
+    text-decoration: none;
+    color: #0943A5;
+    font-size: 16px;
+}
+
+.aditionalList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.linkAditional {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0943A5;
+}

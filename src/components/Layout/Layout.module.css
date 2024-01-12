@@ -1,0 +1,21 @@
+.header {
+    padding: 32px;
+    background-color: #E2A675;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    margin-bottom: 24px;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+}
+
+.navlink {
+    text-decoration: none;
+    color: #0943A5;
+    font-size: 20px;
+    font-weight: 700;
+}

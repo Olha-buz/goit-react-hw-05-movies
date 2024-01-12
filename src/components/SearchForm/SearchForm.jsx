@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import css from './SearchForm.module.css';
 
 const SearchForm = ({ setParams }) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -7,7 +8,7 @@ const SearchForm = ({ setParams }) => {
     console.log(searchQuery);
 
     const handleSumbit = evt => {
-        evt.prevenrDefault();
+        evt.preventDefault();
         setParams(searchQuery);
        
     }
@@ -18,13 +19,14 @@ const SearchForm = ({ setParams }) => {
     }
 
     return ( 
-        <form onSubmit={handleSumbit} >
+        <form className={ css.searchForm} onSubmit={handleSumbit} >
             <input
+                className={css.searchInput}
                 type='text'
                 value={searchQuery}
                 placeholder="Enter movie to search"
                 onChange={handleChange} />
-            <button type='submit'>Search</button>
+            <button className={ css.searchBtn}type='submit'>Search</button>
         </form>
     )
 };
