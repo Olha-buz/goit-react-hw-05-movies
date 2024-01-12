@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/544.790928b9.chunk.css","mappings":"AAAA,4BACI,eACJ,CAEA,gCAEI,aAAc,CADd,oBAEJ","sources":["components/MovieList/MovieList.module.css"],"sourcesContent":[".movieList {\n    list-style: none;\n}\n\n.movieItemLink {\n    text-decoration: none;\n    color: #3468C0;\n}"],"names":[],"sourceRoot":""}
