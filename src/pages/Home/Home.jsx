@@ -1,5 +1,5 @@
 import { fetchGetTranding } from 'api/api';
-import { MovieList } from 'components/MovieList/MovieList';
+import MovieList from 'components/MovieList/MovieList';
 import React, { useEffect, useState } from 'react';
 
 const Home = () => {
@@ -14,9 +14,9 @@ const Home = () => {
   return (
     <div>
       <title>Trends of the day!</title>
-      {movies.length!==0 && <MovieList movies={movies}/>}
+      {movies.length !== 0 && <MovieList movies={movies} />}
     </div>
   )
-}
+};
 
 export default Home;

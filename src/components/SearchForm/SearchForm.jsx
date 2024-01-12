@@ -1,19 +1,23 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const SearchForm = ({ setParams }) => {
+const SearchForm = ({ setParams }) => {
     const [searchQuery, setSearchQuery] = useState('');
+
+    console.log(searchQuery);
 
     const handleSumbit = evt => {
         evt.prevenrDefault();
         setParams(searchQuery);
+       
     }
 
     const handleChange = evt => {
-        setSearchQuery(evt.target.value.trim().toLowerCase())
+        console.log(evt.target.value);
+        setSearchQuery(evt.target.value)
     }
 
-    return (
+    return ( 
         <form onSubmit={handleSumbit} >
             <input
                 type='text'
@@ -28,3 +32,5 @@ export const SearchForm = ({ setParams }) => {
 SearchForm.propTypes = {
 	setParams: PropTypes.func.isRequired,
 }
+
+export default SearchForm;

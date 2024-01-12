@@ -1,7 +1,7 @@
 import { fetchSearchMovie } from 'api/api';
 import Loader from 'components/Loader/Loader';
-import { MovieList } from 'components/MovieList/MovieList';
-import { SearchForm } from 'components/SearchForm/SearchForm';
+import MovieList from 'components/MovieList/MovieList';
+import SearchForm from 'components/SearchForm/SearchForm';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -13,8 +13,11 @@ const Movies = () => {
   const [error, setError] = useState(false);
   const query = searchParams.get('query');
 
+  console.log(searchParams);
+  console.log(query);
+
   useEffect(() => {
-    
+
     if (!query) return;
     setLoading(true);
     
@@ -32,11 +35,9 @@ const Movies = () => {
     
   }, [query]);
 
-  const setParams = evt => {
-    evt.preventDefault();
-    setSearchParams({query: evt.target.elemtnts.search.value});
-    console.log(query);
-    evt.target.reset();
+  const setParams = value => {
+    console.log(value);
+    setSearchParams({ query: value });
   };
 
   return (
@@ -45,9 +46,9 @@ const Movies = () => {
       {loading && <Loader />}
       {error && (<h2>Nothing find</h2>)}
 
-      {movies.length> 0 && <MovieList movies={movies}/>}
+      {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   )
-}
+};
 
 export default Movies;

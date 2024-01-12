@@ -1,8 +1,9 @@
-
 import React, {Suspense, lazy} from 'react';
 import { Route, Routes } from "react-router-dom";
-import Loader from './Loader/Loader';
 
+
+
+const Loader = lazy(() => import('../components/Loader/Loader'));
 const Layout = lazy(() => import('../components/Layout/Layout'));
 const Home = lazy(() => import('../pages/Home/Home'));
 const Movies = lazy(() => import('../pages/Movies/Movies'));

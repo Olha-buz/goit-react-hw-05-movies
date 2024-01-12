@@ -13,6 +13,6 @@ const NotFound = () => {
       <button type='button' onClick={handleBackHome}>Go Home</button>
     </div>
   )
-}
+};
 
 export default NotFound;
