@@ -12,7 +12,7 @@ const Cast = () => {
         fetchCast(movieId)
             .then(credits => {
                 setCast(credits.cast);
-                console.log(credits.cast);
+                // console.log(credits.cast);
             })
             .catch(error => console.log(error.message))
     }, [movieId]);

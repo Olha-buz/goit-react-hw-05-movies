@@ -12,7 +12,7 @@ const MovieDetails = () => {
     const { movieId } = useParams(); 
     const linkRef = useRef(location.state?.from ?? '/movies');
 
-    console.log(movieId);
+    // console.log(movieId);
     
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const MovieDetails = () => {
         fetchMovieId(movieId)
             .then(movie => {
                 setMovie(movie);
-                console.log(movie);
+                // console.log(movie);
             })
             .catch(error => {
                 console.log(error.message);

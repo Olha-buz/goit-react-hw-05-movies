@@ -13,8 +13,8 @@ const Movies = () => {
   const [error, setError] = useState(false);
   const query = searchParams.get('query');
 
-  console.log(searchParams);
-  console.log(query);
+  // console.log(searchParams);
+  // console.log(query);
 
   useEffect(() => {
 
@@ -36,7 +36,7 @@ const Movies = () => {
   }, [query]);
 
   const setParams = value => {
-    console.log(value);
+    // console.log(value);
     setSearchParams({ query: value });
   };
 

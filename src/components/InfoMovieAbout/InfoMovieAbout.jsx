@@ -4,7 +4,7 @@ import css from './InfoMovieAbout.module.css';
 export const InfoMovieAbout = ({movie}) => {
     const genreList = movie.genres ? movie.genres.map(el => el.name).join(', ') : 'Genre?';
     
-    console.log(movie);
+    // console.log(movie);
     
     return (
         <>

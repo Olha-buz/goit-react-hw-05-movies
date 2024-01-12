@@ -5,7 +5,7 @@ import css from './SearchForm.module.css';
 const SearchForm = ({ setParams }) => {
     const [searchQuery, setSearchQuery] = useState('');
 
-    console.log(searchQuery);
+    // console.log(searchQuery);
 
     const handleSumbit = evt => {
         evt.preventDefault();
@@ -14,7 +14,7 @@ const SearchForm = ({ setParams }) => {
     }
 
     const handleChange = evt => {
-        console.log(evt.target.value);
+        // console.log(evt.target.value);
         setSearchQuery(evt.target.value)
     }
 
