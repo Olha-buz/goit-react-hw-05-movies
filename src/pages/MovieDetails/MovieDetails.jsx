@@ -1,25 +1,27 @@
 const { fetchMovieId } = require("api/api");
-const { useState, useEffect } = require("react");
+const { useState, useEffect, useRef } = require("react");
 const { useLocation, useParams, Link, Outlet } = require("react-router-dom");
 
 export const MovieDetails = () => {
     const [movie, setMovie] = useState(null);
     const location = useLocation();
     const { movieId } = useParams();  //не бачу movieId - розібратись в чому проблема
-    // const linkRef = useRef(location.state?.from ?? '/movies');
+    const linkRef = useRef(location.state?.from ?? '/movies');
 
     console.log(movieId);
 
     useEffect(() => {
+        if (!movieId) return;
+
         fetchMovieId(movieId)
             .then(movie => setMovie(movie))
             .catch(error => {
                 console.log(error.message);
-                setMovie([]);
+             
             })
     }, [movieId]);
 
-    if (!movie) return;
+    
 
     function countUserScore() {
         const average = movie.vote_average;
@@ -33,7 +35,7 @@ export const MovieDetails = () => {
 
     return (
         <div>
-            <button className='backbtn' to={location?.state?.from ?? "/"}>Go back</button>
+            <button className='backbtn' to={linkRef.current}>Go back</button>
             <div className='movieInfo'>
                 <img src={movie.poster_path} alt={movie.title} />
                 <div className='intoText'>

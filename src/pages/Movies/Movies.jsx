@@ -11,13 +11,13 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const query = searchParams.get('query') ?? '';
+  const query = searchParams.get('query');
 
   useEffect(() => {
-    if (query === '') {
-      setMovies([]);
-      return;
-    }
+    
+    if (!query) return;
+    setLoading(true);
+    
     fetchSearchMovie(query)
       .then(searchMovie => {
         setMovies(searchMovie);
@@ -25,7 +25,6 @@ const Movies = () => {
       })
       .catch(error => {
         console.log(error.message)
-        setMovies([]);
       })
       .finally(() => {
         setLoading(false);
@@ -45,8 +44,8 @@ const Movies = () => {
       <SearchForm setParams={setParams} />
       {loading && <Loader />}
       {error && (<h2>Nothing find</h2>)}
-      {(query && movies.length > 0) && (<h2>Found movie</h2>)}
-      {<MovieList movies={movies}/>}
+
+      {movies.length> 0 && <MovieList movies={movies}/>}
     </div>
   )
 }

@@ -34,7 +34,6 @@ export const fetchMovieId = async movieId => {
 export const fetchCast = async movieId => {
     const params = {
         api_key: API_KEY,
-        page: 1,
         language: 'en-US',
     };
     
@@ -49,7 +48,6 @@ export const fetchCast = async movieId => {
 export const fetchReviews = async movieId => {
     const params = {
         api_key: API_KEY,
-        page: 1,
         language: 'en-US',
     };
     const { data } = await axios.get(`${baseURL}movie/${movieId}/reviews`, { params });
